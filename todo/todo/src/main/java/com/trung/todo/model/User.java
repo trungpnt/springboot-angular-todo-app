@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -31,5 +32,6 @@ public class User implements Serializable {
 
     //mappedBy the name of the field inside category
     @OneToMany(mappedBy = "user")
-    private List<Cateogry> cateogryList;
+    private List<Category> categories;
+
 }
