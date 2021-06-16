@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
@@ -31,7 +32,7 @@ public class CategoryDto {
         category.setId(categoryDto.getId());
         category.setName(categoryDto.getName());
         category.setDescription(categoryDto.getDescription());
-        
+
         return category;
     }
 
@@ -40,7 +41,7 @@ public class CategoryDto {
                 .id(category.getId())
                 .name(category.getName())
                 .description(category.getDescription())
-                .todoList(
+                .todoDtoList(
                         category.getTodoList() != null ? category.getTodoList().stream().map(TodoDto::fromEntity).collect(Collectors.toList()) : null
                 )
                 .build();
