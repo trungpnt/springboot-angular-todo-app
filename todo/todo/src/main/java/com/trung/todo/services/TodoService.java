@@ -12,6 +12,6 @@ public interface TodoService {
     TodoDto findById(Long id);
 
     List<TodoDto> findByCategory(Long categoryId);
-    
+
     void delete(Long id);
 }
